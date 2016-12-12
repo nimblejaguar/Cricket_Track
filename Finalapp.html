@@ -5,73 +5,79 @@
   <link type= "text/css" rel= "stylesheet" href= "finalwebstyle.css"/>
   <script src="vue.js"></script>
 
-    <title>"project 1"</title>
-    <h1 align = "center">Track and Scorecard</h1>
-  </head>
-  <body>
-    <script src="vue.js"></script>
-    <img src ="photo.jpg">
-    <h1><a href="ssla.edu.in">SSLA <span>Cricket Team</span></a></h1>
-    <a href="http://www.ssla.edu.in/" allign = "center">Symbiosis School For Liberal Arts</a>
-    <br><p>Welcome!</p></br>
-    <p>This is the SSLA Cricket Team web portal</p>
-    <p>Keep a track of your practices and be the scorer for your own practice matches!</p>
+  <title>"project 1"</title>
+  <h1 align = "center">Track and Scorecard</h1>
+</head>
+<body>
+  <script src="vue.js"></script>
+  <img src ="photo.jpg">
+  <h1><a href="ssla.edu.in">SSLA <span>Cricket Team</span></a></h1>
+  <a href="http://www.ssla.edu.in/" allign = "center">Symbiosis School For Liberal Arts</a>
+  <br><p>Welcome!</p></br>
+  <p>This is the SSLA Cricket Team web portal</p>
+  <p>Keep a track of your practices and be the scorer for your own practice matches!</p>
 
-    <div id="page">
-      <header id="Track and Scores">
-        <div id="Track">
-          <div id="SSLA Cricket Team">
+  <div id="button">
+    <ul>
+      <li><a href="http://www.ssla.edu.in/about">About</a></li>
+      <li><a href="http://www.ssla.edu.in/contact/phone-numbers-email-ids">Contact</a></li>
+      <li><a href="">FAQ</a></li>
 
-          </div>
-          <div id="button">
-            <ul>
-              <li><a href="http://www.ssla.edu.in/about">About</a></li>
-              <li><a href="http://www.ssla.edu.in/contact/phone-numbers-email-ids">Contact</a></li>
-              <li><a href="">FAQ</a></li>
+    </ul>
+  </div>
 
-            </ul>
-          </div>
-          <div class="clr"></div>
-        </div>
-      </header>
-      <div class="feature">
-        <div class="feature-inner">
-
-        </div>
-      </div>
-      <div id="app">
-      <h3>Runs: {{ Runs }}</h3>
-      <button @click="upByOne()"
-     v-if="Runs >= 0">
-      Runs
-    </button>
-    <p v-else>Can't have negative runs in cricket</p>
-    <button @click="downByOne()"
-            v-if="Runs > 0">
-
-          </button>
-          <p v-else>Can't score less than 0 for a team total</p>
-        </div>
+</header>
 
 
-    <script>
-    new Vue({
-      el: '#app',
-      data: {
-        Runs : 0
-      },
-      methods: {
-        upByOne: function(){
-          this.runs +=1;
-        },
-        downByOne: function()
-        {
+<div id="app">
+  <h3>  Runs: {{ Runs }}</h3>
+  <button @click="upByOne()"
+  <v-if="Runs < 1000">
+  Runs
+</button>
+<p v-else>Can't score less than 0 for a team total</p>
+</div>
 
-          this.runs -=1;
-        }
+
+<script>
+new Vue
+(
+  {
+    el: '#app',
+    data:
+    {
+      Runs : 0
+    },
+    methods:
+    {
+      upByOne: function()
+      {
+        this.Runs +=1;
       }
-    });
+      /*upByTwo: function()
+      {
 
-    </script>
-  </body>
-  </html>
+      this.runs +=2;
+    }
+    upByThree: function()
+    {
+    this.runs+=3;
+  }
+  upByFour: function()
+  {
+  this.runs+=4;
+}
+upBySix: function()
+{
+this.runs+=6;
+
+}*/
+
+}
+}
+
+);
+
+</script>
+</body>
+</html>
