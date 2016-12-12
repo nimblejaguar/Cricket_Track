@@ -1,105 +1,77 @@
 <!DOCTYPE html>
 <html>
- <head>
+<head>
   <meta charset="utf-8">
   <link type= "text/css" rel= "stylesheet" href= "finalwebstyle.css"/>
-  <title>"project 1"</title>
-<h1 align = "center">Track and Scorecard</h1>
-</head>
-<body>
+  <script src="vue.js"></script>
+
+    <title>"project 1"</title>
+    <h1 align = "center">Track and Scorecard</h1>
+  </head>
+  <body>
     <script src="vue.js"></script>
-<img src ="photo.jpg">
-<h1><a href="ssla.edu.in">SSLA <span>Cricket Team</span></a></h1>
-<a href="http://www.ssla.edu.in/" allign = "center">Symbiosis School For Liberal Arts</a>
-<br><p>Welcome!</p></br>
-<p>This is the SSLA Cricket Team web portal</p>
-<p>Keep a track of your practices and be the scorer for your own practice matches!</p>
+    <img src ="photo.jpg">
+    <h1><a href="ssla.edu.in">SSLA <span>Cricket Team</span></a></h1>
+    <a href="http://www.ssla.edu.in/" allign = "center">Symbiosis School For Liberal Arts</a>
+    <br><p>Welcome!</p></br>
+    <p>This is the SSLA Cricket Team web portal</p>
+    <p>Keep a track of your practices and be the scorer for your own practice matches!</p>
 
-<div id="page">
-			<header id="Track and Scores">
-				<div id="Track">
-					<div id="SSLA Cricket Team">
+    <div id="page">
+      <header id="Track and Scores">
+        <div id="Track">
+          <div id="SSLA Cricket Team">
 
-					</div>
-					<div id="button">
-						<ul>
-						<li><a href="http://www.ssla.edu.in/about">About</a></li>
-						<li><a href="http://www.ssla.edu.in/contact/phone-numbers-email-ids">Contact</a></li>
-						<li><a href="">FAQ</a></li>
+          </div>
+          <div id="button">
+            <ul>
+              <li><a href="http://www.ssla.edu.in/about">About</a></li>
+              <li><a href="http://www.ssla.edu.in/contact/phone-numbers-email-ids">Contact</a></li>
+              <li><a href="">FAQ</a></li>
 
-						</ul>
-					</div>
-					<div class="clr"></div>
-				</div>
-			</header>
-			<div class="feature">
-				<div class="feature-inner">
+            </ul>
+          </div>
+          <div class="clr"></div>
+        </div>
+      </header>
+      <div class="feature">
+        <div class="feature-inner">
 
-				</div>
-			</div>
-      <script>
-      new Vue
-      (
-        {
-        el:'#app',
-        methods:
-        {
-          optionClicked: function(option,Question)
-          {
-            Question.hasAttempted=true;
+        </div>
+      </div>
+      <div id="app">
+      <h3>Runs: {{ Runs }}</h3>
+      <button @click="upByOne()"
+     v-if="Runs >= 0">
+      Runs
+    </button>
+    <p v-else>Can't have negative runs in cricket</p>
+    <button @click="downByOne()"
+            v-if="Runs > 0">
 
-            if(option.isCorrect==true)
-            {
-              this.score+=1;
-            }
-            else
-             {
-              this.score -=1;
-            }
+          </button>
+          <p v-else>Can't score less than 0 for a team total</p>
+        </div>
 
-            alert("hey, you clicked the "+ option.isCorrect+ " option" );
-          }
 
+    <script>
+    new Vue({
+      el: '#app',
+      data: {
+        Runs : 0
+      },
+      methods: {
+        upByOne: function(){
+          this.runs +=1;
         },
-        data: {
-          score: 0,
-          questions:
-          [
-            {
-              hasAttempted: false,
-              questionLabel: "How many tests has Tendulkar played?",
-              options:
-               [
-                {
-                  optionLabel: "199",
-                  isCorrect: false
-                },
-                {
-                  optionLabel: "200",
-                  isCorrect: true
-                },
-              ]
-            },
-            {
-              hasAttempted: false,
-              questionLabel: "question 2",
-              options:
-              [
-                {
-                  optionLabel: "option 1",
-                  isCorrect: true
-                },
-                {
-                  optionLabel: "option 2",
-                  isCorrect: false
-                },
-              ]
-            }
-          ]
-        },
-      })
-      </script>
-    </body>
+        downByOne: function()
+        {
 
+          this.runs -=1;
+        }
+      }
+    });
 
-</html>
+    </script>
+  </body>
+  </html>
