@@ -33,9 +33,25 @@
   <h3>  Runs: {{ Runs }}</h3>
   <button @click="upByOne()"
   <v-if="Runs < 1000">
-  Runs
+  1 Runs
 </button>
-<p v-else>Can't score less than 0 for a team total</p>
+<button @click="upByTwo()"
+<v-if="Runs < 1000">
+2 Runs
+</button>
+<button @click="upByThree()"
+<v-if="Runs < 1000">
+3 Runs
+</button>
+<button @click="upByFour()"
+<v-if="Runs < 1000">
+4 Runs
+</button>
+<button @click="upBySix()"
+<v-if="Runs < 1000">
+6 Runs
+</button>
+
 </div>
 
 
@@ -53,31 +69,28 @@ new Vue
       upByOne: function()
       {
         this.Runs +=1;
-      }
-      /*upByTwo: function()
+      },
+      upByTwo: function()
       {
+        this.Runs +=2;
+      },
+      upByThree: function()
+      {
+        this.Runs +=3;
+      },
+      upByFour: function()
+      {
+        this.Runs +=4;
+      },
+      upBySix: function()
+      {
+        this.Runs +=6;
 
-      this.runs +=2;
+      }
     }
-    upByThree: function()
-    {
-    this.runs+=3;
   }
-  upByFour: function()
-  {
-  this.runs+=4;
-}
-upBySix: function()
-{
-this.runs+=6;
-
-}*/
-
-}
-}
-
 );
 
-</script>
-</body>
-</html>
+  </script>
+  </body>
+  </html>
