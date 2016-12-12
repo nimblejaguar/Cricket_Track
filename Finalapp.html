@@ -30,7 +30,7 @@
 
 
 <div id="app">
-  <h3>  Runs: {{ Runs }}</h3>
+  <h3> {{ Runs }} - {{ Wickets }}  </h3>
   <button @click="upByOne()"
   <v-if="Runs < 1000">
   1 Runs
@@ -51,7 +51,11 @@
 <v-if="Runs < 1000">
 6 Runs
 </button>
-
+<button @click="upByWickets()"
+<v-if="Wickets<11">
+Wicket
+</button>
+<p v-else>ALL OUT!</p>
 </div>
 
 
@@ -62,8 +66,10 @@ new Vue
     el: '#app',
     data:
     {
-      Runs : 0
+      Runs : 0,
+      Wickets : 0
     },
+
     methods:
     {
       upByOne: function()
@@ -86,11 +92,15 @@ new Vue
       {
         this.Runs +=6;
 
+      },
+      upByWickets: function()
+      {
+        this.Wickets +=1;
       }
     }
   }
 );
 
-  </script>
-  </body>
-  </html>
+</script>
+</body>
+</html>
