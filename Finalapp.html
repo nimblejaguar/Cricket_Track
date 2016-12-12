@@ -8,26 +8,25 @@
 </head>
 <body>
     <script src="vue.js"></script>
-<body bg color = "teal">
-
-<img src ="C:\Users\vigne\Documents\GitHub\photo.jpg">
-<a href="http://www.ssla.edu.in/">Symbiosis School For Liberal Arts</a>
+<img src ="photo.jpg">
+<h1><a href="ssla.edu.in">SSLA <span>Cricket Team</span></a></h1>
+<a href="http://www.ssla.edu.in/" allign = "center">Symbiosis School For Liberal Arts</a>
 <br><p>Welcome!</p></br>
 <p>This is the SSLA Cricket Team web portal</p>
 <p>Keep a track of your practices and be the scorer for your own practice matches!</p>
-<marquee>My name is VIGNESH</marquee>
+
 <div id="page">
 			<header id="Track and Scores">
 				<div id="Track">
 					<div id="SSLA Cricket Team">
-						<h1><a href="#">SSLA <span>Cricket Team</span></a></h1>
+
 					</div>
-					<div id="top-nav">
+					<div id="button">
 						<ul>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">FAQ</a></li>
-						<li><a href="#">Help</a></li>
+						<li><a href="http://www.ssla.edu.in/about">About</a></li>
+						<li><a href="http://www.ssla.edu.in/contact/phone-numbers-email-ids">Contact</a></li>
+						<li><a href="">FAQ</a></li>
+
 						</ul>
 					</div>
 					<div class="clr"></div>
@@ -38,5 +37,69 @@
 
 				</div>
 			</div>
-</body>
+      <script>
+      new Vue
+      (
+        {
+        el:'#app',
+        methods:
+        {
+          optionClicked: function(option,Question)
+          {
+            Question.hasAttempted=true;
+
+            if(option.isCorrect==true)
+            {
+              this.score+=1;
+            }
+            else
+             {
+              this.score -=1;
+            }
+
+            alert("hey, you clicked the "+ option.isCorrect+ " option" );
+          }
+
+        },
+        data: {
+          score: 0,
+          questions:
+          [
+            {
+              hasAttempted: false,
+              questionLabel: "How many tests has Tendulkar played?",
+              options:
+               [
+                {
+                  optionLabel: "199",
+                  isCorrect: false
+                },
+                {
+                  optionLabel: "200",
+                  isCorrect: true
+                },
+              ]
+            },
+            {
+              hasAttempted: false,
+              questionLabel: "question 2",
+              options:
+              [
+                {
+                  optionLabel: "option 1",
+                  isCorrect: true
+                },
+                {
+                  optionLabel: "option 2",
+                  isCorrect: false
+                },
+              ]
+            }
+          ]
+        },
+      })
+      </script>
+    </body>
+
+
 </html>
